@@ -7,9 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || process.env.MAIN_PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
-// ✅ يخدم ملفات Vite الجاهزة بعد البناء
 app.use(express.static(path.join(__dirname, "dist")));
 
 app.get(/.*/, (req, res) => {
